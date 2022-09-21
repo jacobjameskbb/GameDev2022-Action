@@ -1,0 +1,24 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Menu Manager.gd" type="Script" id=1]
+[ext_resource path="res://Main.gd" type="Script" id=2]
+[ext_resource path="res://World Manager.gd" type="Script" id=3]
+[ext_resource path="res://Player/player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Assets/dirt.tres" type="TileSet" id=5]
+
+[node name="Main" type="Node"]
+script = ExtResource( 2 )
+
+[node name="World Manager" type="Node2D" parent="."]
+script = ExtResource( 3 )
+
+[node name="PlayerBody" parent="World Manager" instance=ExtResource( 4 )]
+collision_layer = 7
+
+[node name="TileMap" type="TileMap" parent="World Manager"]
+tile_set = ExtResource( 5 )
+format = 1
+tile_data = PoolIntArray( 393213, 0, 0, 393214, 0, 0, 393215, 0, 0, 327680, 0, 0, 327681, 0, 0, 327682, 0, 0, 327683, 0, 0, 327684, 0, 0, 327685, 0, 0, 327686, 0, 0, 327687, 0, 0, 327688, 0, 0, 327689, 0, 0, 327690, 0, 0, 327691, 0, 0, 327692, 0, 0, 327693, 0, 0, 327694, 0, 0, 327695, 0, 0 )
+
+[node name="Menu Manager" type="Node2D" parent="."]
+script = ExtResource( 1 )
